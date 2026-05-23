@@ -1,75 +1,72 @@
-# 🎌 Interactive Travel Journal & Portfolio: "My Trip to Japan"
+# 🎌 Modern Component-Driven Travel Journal & Portfolio
 
-An elegant, highly interactive, and responsive single-page web application built to showcase multimedia travel experiences. This project seamlessly integrates fluid UI/UX designs, asynchronous user interactions, dynamic scroll-spying navigation, and video/photo gallery components.
-
-> **Engineering Update In Progress:** I am currently refactoring this production-ready vanilla stack (HTML5/SCSS/JavaScript ES6) into a modular component-based architecture using **React.js** and **Tailwind CSS**.
+An interactive, responsive single-page multimedia portfolio application engineered using **React 18**, **Vite**, and **ES6+**. Originally developed as a vanilla web stack, this project has been fully refactored into a modular, declarative component architecture to optimize rendering pipeline performance and client-side state predictability.
 
 ---
 
-## 🚀 Live Demo & Interface Highlights
-- **Interactive Multi-City Carousel:** Smooth, index-tracked slideshow featuring high-resolution photography from Tokyo, Kyoto, and Osaka.
-- **Scrollspy Dynamic Navigation:** Adaptive top navigation bar that morphs background padding based on scroll thresholds and automatically highlights menu items using real-time viewport collision calculations.
-- **Dynamic Lightbox Photo Gallery:** Interactive modal view utilizing event delegation to open high-definition imagery with descriptive captions on-click.
-- **Context-Aware Media Control:** Event-driven HTML5 video player that automatically plays on cursor container entry and pauses/resets upon mouse leave to optimize client-side resource management.
+## 🚀 Key Engineering & Interactive Features
+
+- **Component-Driven Architecture:** Segmented semantic layouts into scalable React JSX modules, fostering high reusability and isolated state environments.
+- **Index-Tracked Carousel UI:** State-driven slideshow navigation component utilizing cyclic boundaries for continuous item loop visualization.
+- **Event-Driven Lightbox Gallery:** Implements explicit React conditional rendering and dynamic properties mapping (`src`/`alt`) to serve localized travel photography via modal streams without bloating the DOM tree.
+- **Context-Aware HTML5 Media Sync:** Leverages precise React component reference hooks and synthetic DOM event handlers (`onMouseEnter`/`onMouseLeave`) to dynamically trigger background multi-media loops based on client collision boundaries.
+- **Optimized Bundling Pipeline:** Powered by **Vite** to ensure instantaneous Hot Module Replacement (HMR) and ultra-lean production asset tree-shaking.
 
 ---
 
-## 🛠️ Architecture & Tech Stack
+## 🛠️ Technology Stack & Engineering Matrix
 
-### Current Implementation (Vanilla Stack)
-- **Frontend Core:** Semantic HTML5, CSS3, Modern JavaScript (ES6+)
-- **Styling Architecture:** SCSS (Sassy CSS) modular sheets compiled into unified layout stylesheets.
-- **Typography & Assets:** Google Fonts Integration (Lato), FontAwesome v4.7 Icon Package.
-
-### Target Migration (React Refactoring Blueprint)
-- **Framework:** React 18+ (Functional Components with Hooks)
-- **State Management:** 
-  - `useState` for explicit slideshow pagination indices and Modal visualization toggles.
-  - `useEffect` paired with `IntersectionObserver API` to replace heavy window scroll event listeners for premium viewport monitoring.
-- **Styling Framework:** Tailwind CSS for robust, utility-first layout responsiveness.
+- **Core Framework:** React 18 (Functional Components, Standard/Custom Hooks)
+- **Build Automation Toolchain:** Vite, Babel Compilation Layer, ESLint Configuration Profiles
+- **Style Compilation:** Modular CSS Sheets & SCSS Integration
+- **Asset Pipelines:** Locally served high-definition HTML5 video assets and optimized multi-resolution web imagery.
 
 ---
 
-## 💻 Core Engineering & Algorithm Insights
-
-### 1. Viewport-Aware Scrollspy System
-Instead of simple styling toggles, the scroll handler dynamically reads DOM node coordinates (`getBoundingClientRect()`) relative to the viewport's middle threshold to update navigation states with micro-interactions.
-
-```javascript
-// Highlighting active section based on real-time scroll telemetry
-window.addEventListener("scroll", () => {
-  const sections = document.querySelectorAll("div[id], section[id]");
-  const middle = window.innerHeight / 2;
-  
-  sections.forEach((section) => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top <= middle && rect.bottom >= middle) {
-      current = section.getAttribute("id");
-    }
-  });
-  // State propagation to UI navbar elements...
-});
-```
-
-### 2. State-Driven Image Carousel
-Maintains index tracking boundaries through cyclic wrapping algorithms, ensuring seamless transitions between slide nodes with a fallback layer preventing script crashes if DOM components are unmounted.
-
----
-
-## 📂 Project Structure
+## 📂 Production Directory Topology
 
 ```text
-├── index.html          # Semantic layout core and DOM nodes
-├── css/
-│   └── main.scss       # SCSS nesting rules, variables, and responsive mixins
-├── js/
-│   └── main.js         # ES6 interaction scripts and DOM mutation handlers
-└── assets/
-    ├── img/            # Optimized travel photography assets (Tokyo, Kyoto, Hakone)
-    └── food.MP4        # Compressed high-definition HTML5 video loop
+├── .github/                 # Automated deployment integrations
+├── public/                  # Global static resources
+├── src/                     # Core application source tree
+│   ├── assets/              # Raw multimedia assets
+│   │   ├── food.MP4         # Embedded background MP4 loop
+│   │   ├── img0.png - img9.jpg  # Multi-city landscape photography
+│   │   └── self3.png / self5.jpg# Profile visual assets
+│   ├── App.css              # Main layout rules & responsive breakpoints
+│   ├── App.jsx              # Application root element & state distributor
+│   ├── index.css            # Base stylesheet layers & CSS variables
+│   └── main.jsx             # React DOM injection and strict-mode container
+├── eslint.config.js         # Static code analysis configuration
+├── index.html               # Multi-media shell template
+├── package.json             # Module manifest & dependency registry
+└── vite.config.js           # Advanced Vite compiler optimizations
 ```
 
 ---
 
-## 👩‍💻 About the Author
-I am a Master’s student in **Computer Science at the University of Illinois Urbana-Champaign (UIUC)**, maintaining a **4.0/4.0 GPA** in advanced software tracks. My passion lies at the intersection of robust backend/frontend engineering and empathetic UI/UX design. Outside of writing clean code, I am an avid travel photographer and an atmospheric visual storyteller.
+## 💻 Technical Implementation Highlight
+
+### Declared State Optimization (Vite/React Engine)
+
+The application handles fluid animations and modular media states seamlessly by shifting away from heavy vanilla script bindings to declarative state synchronizations:
+
+```jsx
+// Simplified Blueprint of Event-Driven Multi-Media Optimization
+const handleMediaPlayback = (action) => {
+  if (action === "play") {
+    videoRef.current.play();
+  } else {
+    videoRef.current.pause();
+    videoRef.current.currentTime = 0;
+  }
+};
+```
+
+---
+
+## 👩‍💻 About the Engineer
+
+I am an incoming Software Engineer and a Graduate Student pursuing a Master of Computer Science (MCS) at the **University of Illinois Urbana-Champaign (UIUC)**, holding a perfect **4.0/4.0 GPA**.
+
+My core focus balances scalable system infrastructures with human-centric Frontend UI/UX Engineering. This project demonstrates my proficiency in legacy code migrations, asset pipelining, and building sleek, interactive systems that bring human moments into digital experiences.
