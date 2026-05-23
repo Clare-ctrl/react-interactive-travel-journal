@@ -1,7 +1,7 @@
 # 🎌 Modern Component-Driven Travel Journal & Portfolio
 
 <p align="center">
-  <img src="./japan-trip/assets/home.png" width="48%"> 
+  <img src="./japan-trip/assets/home.png" width="68%"> 
 </p>
 An interactive, responsive single-page multimedia portfolio application engineered using **React 18**, **Vite**, and **ES6+**. Originally developed as a vanilla web stack, this project has been fully refactored into a modular, declarative component architecture to optimize rendering pipeline performance and client-side state predictability.
 
